@@ -1,12 +1,12 @@
-# Gerador de Relatório em PDF com JasperReports e MySQL
+# Visualizar relatório com JasperReports e MySQL
 
 ## Descrição
-Esta aplicação Java conecta-se a um banco de dados MySQL (Workbench) e gera um relatório em PDF com os dados extraídos. O JasperReports é utilizado para a formatação e exportação do relatório.
+Esta aplicação Java conecta-se a um banco de dados MySQL (Workbench) e exibe um relatório com os dados extraídos. O JasperReports é utilizado para a formatação e exportação do relatório.
 
 ## Tecnologias Utilizadas
 - **Java** (JDBC para conexão com o MySQL)
 - **MySQL Workbench** (Banco de dados relacional)
-- **JasperReports** (Geração de PDFs)
+- **JasperReports** (Visualizar relatório)
 - **iReport Designer** (Opcional, para edição de templates de relatórios)
 
 ## Configuração do Ambiente
@@ -21,7 +21,7 @@ Esta aplicação Java conecta-se a um banco de dados MySQL (Workbench) e gera um
    ```
 2. Configure as credenciais do banco de dados no arquivo `application.properties` ou diretamente no código JDBC.
 3. Compile e execute a aplicação Java.
-4. O PDF gerado será salvo no diretório especificado.
+4. Um relatório será exibido com os dados extraídos da tabela em questão.
 
 ## Exemplo de Uso
 ```java
