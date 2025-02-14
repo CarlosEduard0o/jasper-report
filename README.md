@@ -29,8 +29,3 @@ Connection conn = DriverManager.getConnection(url, user, password);
 JasperPrint jasperPrint = JasperFillManager.fillReport("relatorio.jasper", new HashMap<>(), conn);
 JasperExportManager.exportReportToPdfFile(jasperPrint, "relatorio.pdf");
 ```
-
-
-## Licença
-Este projeto está sob a licença MIT.
-
