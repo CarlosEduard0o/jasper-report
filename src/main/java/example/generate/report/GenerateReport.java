@@ -13,10 +13,8 @@ import net.sf.jasperreports.engine.JRException;
  */
 public class GenerateReport {
 
-
-
     public static void main(String[] args) throws JRException  {
-        GerarRelatorio relatorioService = new GerarRelatorio();
+        GerarGrafico relatorioService = new GerarGrafico();
         try {
             relatorioService.gerar();
         } catch (ClassNotFoundException ex) {

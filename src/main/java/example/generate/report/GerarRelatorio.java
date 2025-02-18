@@ -19,7 +19,7 @@ import net.sf.jasperreports.view.JasperViewer;
  */
 public class GerarRelatorio {
 
-    final static private String url = "jdbc:mysql://ip:port/dbname";
+    final static private String url = "jdbc:mysql://your-database-ip:your-database-port/dbname";
     final static private String user = "user";
     final static private String password = "password";
     final static private String sql = "SELECT * FROM dbname;";
@@ -32,13 +32,13 @@ public class GerarRelatorio {
             Connection conn = DriverManager.getConnection(url, user, password);
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
-        JasperReport report = JasperCompileManager.compileReport(getClass().getResourceAsStream("/Relatorio/relatorio.jrxml"));
+            JasperReport report = JasperCompileManager.compileReport(getClass().getResourceAsStream("/Relatorio/relatorio.jrxml"));
             JRResultSetDataSource jrRS = new JRResultSetDataSource(rs);
             Map parametros = new HashMap();
             parametros.put("titulo", "Relatorio");      
             JasperPrint print = JasperFillManager.fillReport(report, parametros, jrRS);
-            JasperViewer viewer = new JasperViewer(print, true);
-            viewer.show();
+            String downloadPath = System.getProperty("user.home");
+            JasperExportManager.exportReportToPdfFile(print, downloadPath+"/Downloads/relatorio.pdf");
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
@@ -53,7 +53,4 @@ public class GerarRelatorio {
         }
     }
 
-    public InputStream getJRXMLFile() {
-        return getClass().getResourceAsStream("/Relatorio/relatorio.jrxml");
-    }
 }

@@ -4,6 +4,7 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="titulo" class="java.lang.String"/>
+	<parameter name="grafico" class="java.lang.String"/>
 	<field name="id" class="java.lang.String"/>
 	<field name="nome" class="java.lang.String"/>
 	<field name="codigo" class="java.lang.String"/>
@@ -28,6 +29,10 @@
 				</textElement>
 				<text><![CDATA[Jiga Automatizada]]></text>
 			</staticText>
+			<image>
+				<reportElement x="0" y="18" width="90" height="61" uuid="c95a3f6b-46b8-4ef3-a7db-5c64d706af6c"/>
+				<imageExpression><![CDATA["D:\\generate-report\\src\\main\\resources\\Figuras\\Logo_90x61.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
@@ -35,72 +40,16 @@
 	</pageHeader>
 	<columnHeader>
 		<band height="29" splitType="Stretch">
-			<staticText>
-				<reportElement x="0" y="2" width="25" height="20" forecolor="#D0B48E" uuid="055a3111-605c-40b1-af9f-9a11c858aa31"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
-				</textElement>
-				<text><![CDATA[ID]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="25" y="2" width="96" height="20" forecolor="#D0B48E" uuid="979e2def-464e-4600-b1a2-aa70a5b39a00"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
-				</textElement>
-				<text><![CDATA[PRODUTO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="121" y="2" width="55" height="20" forecolor="#D0B48E" uuid="ee3d9f23-0c2d-48a4-aa1d-91eed764f844"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
-				</textElement>
-				<text><![CDATA[CODIGO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="176" y="2" width="213" height="20" forecolor="#D0B48E" uuid="8692aee7-bc28-4eed-bfd7-47acb407c04b"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
-				</textElement>
-				<text><![CDATA[CONTADOR NUMERO DE SERIE]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="389" y="2" width="166" height="20" forecolor="#D0B48E" uuid="2a89b91c-8127-40f4-b6ab-25fe9d891bb3"/>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="12"/>
-				</textElement>
-				<text><![CDATA[ULTIMA ATUALIZACAO]]></text>
-			</staticText>
 			<line>
 				<reportElement x="0" y="24" width="555" height="1" uuid="7dddf596-b988-4148-8e3f-2fc5fc12de45"/>
 			</line>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="27" splitType="Stretch">
+		<band height="116" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="25" height="20" uuid="02672250-651e-408c-9e42-32a8b6bafecb"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="25" y="0" width="96" height="20" uuid="d6e819b8-fdfb-438a-a9a7-f8022c941b45"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="121" y="0" width="55" height="20" uuid="3758a844-3456-448e-a605-a730cf9ad06c"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="176" y="0" width="213" height="20" uuid="c20f442d-a610-4ec7-92d2-b20d02a15cfd"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{contadorNumeroSerie}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="389" y="0" width="166" height="20" uuid="d22bd32e-1659-4036-9c35-b6264bf70ea3"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$F{ultimaAtualizacao}]]></textFieldExpression>
+				<reportElement x="223" y="43" width="100" height="20" uuid="ee6a35f9-7a20-44ec-9225-7acf9a272b75"/>
+				<textFieldExpression><![CDATA[$P{grafico}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
